@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Schedule your tasks!</title>
+    </head>
+
+    <body>
+
+
+        <main>
+            <h2>This is the page for adding a post</h2>
+            
+            <div class="add-post">
+                <button class="task-type">Task</button>
+                <button class="event-type">Event</button>
+
+                <div class="post-form">
+                    <!-- EVENT -->
+                    <div class="event-form-wrapper">
+                        <form action="">
+                            <div>
+                                <label for="eTitle">Заглавие *</label>
+                                <input id="eTitle" name="title" required placeholder="Пр.: Среща с екипа">
+                            </div>
+                            <div>
+                                <label for="eLocation">Място</label>
+                                <input id="eLocation" name="location" placeholder="Пр.: Офис / Zoom">
+                            </div>
+                            <div>
+                                <label for="eDate">Дата *</label>
+                                <input id="eDate" name="date" type="date" required>
+                            </div>
+                            <div>
+                                <label for="eTime">Час</label>
+                                <input id="eTime" name="time" type="time">
+                            </div>
+                            <label for="eNotes">Бележки</label>
+                            <textarea id="eNotes" name="notes" placeholder="Допълнителни детайли..."></textarea>
+
+                            <div class="actions">
+                                <button type="submit" class="primary">Запази събитие</button>
+                                <button type="reset">Изчисти</button>
+                            </div>
+                            <input type="hidden" id="eId" name="id">
+                        </form>
+                    </div>
+
+                    <!-- TASK -->
+                    <div class="task-form-wrapper">
+                        <form action="">
+                            <div class="row">
+                                <div>
+                                    <label for="tTitle">Заглавие *</label>
+                                    <input id="tTitle" name="title" required placeholder="Пр.: Напиши отчет">
+                                </div>
+                                <div>
+                                    <label for="tPriority">Приоритет</label>
+                                    <select id="tPriority" name="priority">
+                                        <option value="normal">Нормален</option>
+                                        <option value="high">Висок</option>
+                                        <option value="low">Нисък</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <label for="tDue">Краен срок</label>
+                                    <input id="tDue" name="due" type="date">
+                                </div>
+                                <div>
+                                    <label for="tDone">Готова?</label>
+                                    <select id="tDone" name="done">
+                                        <option value="false" selected>Не</option>
+                                        <option value="true">Да</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label for="tNotes">Бележки</label>
+                            <textarea id="tNotes" name="notes" placeholder="Детайли/подзадачи..."></textarea>
+
+                            <div class="actions">
+                                <button type="submit" class="primary">Запази задача</button>
+                                <button type="reset">Изчисти</button>
+                            </div>
+                            <input type="hidden" id="tId" name="id">
+                        </form>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+
+    </body>
+
+</html>
+
