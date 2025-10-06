@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: qwerty1234
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: flaskuser
+      MYSQL_PASSWORD: flaskpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build: .
+    command: flask run --host=0.0.0.0
+    ports:
+      - "5000:5000"
+    environment:
+      DB_USER: flaskuser
+      DB_PASS: flaskpass
+      DB_HOST: db
+      DB_NAME: mydb
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
